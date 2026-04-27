@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BanglaSentiment Pro Dashboard — Monitor your sentiment analyses and customer insights at a glance.">
+    <title>BanglaSentiment Pro — Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='7' fill='%237C3AED'/><circle cx='14' cy='14.5' r='2.5' fill='white'/></svg>">
+<link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <script src="../js/theme.js"></script>
+    <div class="app-layout">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Logo -->
+            <div class="sidebar-brand">
+                <svg class="sidebar-logo" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="28" height="28" rx="7" fill="#7C3AED"/>
+                    <path d="M8 14.5C8 11 10.5 8 14 8C17.5 8 20 11 20 14.5C20 18 17.5 20.5 14 20.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                    <circle cx="14" cy="14.5" r="2.5" fill="#fff"/>
+                    <path d="M14 20.5V23" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar-brand-name">BanglaSentiment</span>
+            </div>
+
+            <!-- Nav links -->
+            <nav class="sidebar-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li>
+                        <a href="dashboard.html" class="nav-link active" id="navDashboard">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="analysis.html" class="nav-link" id="navNewAnalysis">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                            <span>New Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="results.html" class="nav-link" id="navResults">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span>Results</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="history.html" class="nav-link" id="navHistory">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html" class="nav-link" id="navSettings">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Bottom links -->
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-link" id="navHelp">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span>Help</span>
+                </a>
+                <a href="login.html" class="nav-link" id="navLogout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+            <!-- Top bar -->
+            <header class="top-bar">
+                <div class="greeting">
+                    <h1 class="greeting-text">Loading account...</h1>
+                    <p class="greeting-sub">Here's what's happening with your analyses.</p>
+                </div>
+                <button class="new-analysis-btn" id="newAnalysisBtn">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/></svg>
+                    <span>New Analysis</span>
+                </button>
+            </header>
+
+            <!-- Metric Cards -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon-wrap blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <div class="metric-body">
+                        <span class="metric-label">Total Analyses</span>
+                        <div class="metric-row">
+                            <span class="metric-value" data-target="0">0</span>
+                            <span class="trend up">
+                                <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M8 4l4 4H4l4-4z"/></svg>
+                                Live
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-wrap purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div class="metric-body">
+                        <span class="metric-label">Total Reviews</span>
+                        <div class="metric-row">
+                            <span class="metric-value" data-target="0">0</span>
+                            <span class="trend up">
+                                <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M8 4l4 4H4l4-4z"/></svg>
+                                Live
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-wrap green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
+                    <div class="metric-body">
+                        <span class="metric-label">Positive Sentiment</span>
+                        <div class="metric-row">
+                            <span class="metric-value" data-target="0" data-suffix="%">0%</span>
+                            <span class="trend up">
+                                <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M8 4l4 4H4l4-4z"/></svg>
+                                Live
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-wrap red">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
+                    <div class="metric-body">
+                        <span class="metric-label">Negative Sentiment</span>
+                        <div class="metric-row">
+                            <span class="metric-value" data-target="0" data-suffix="%">0%</span>
+                            <span class="trend down">
+                                <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M8 12l4-4H4l4 4z"/></svg>
+                                Live
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <div class="empty-illustration" aria-hidden="true">
+                    <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Document bg -->
+                        <rect x="50" y="16" width="100" height="128" rx="10" fill="#EDE9FE"/>
+                        <rect x="58" y="28" width="84" height="104" rx="6" fill="#fff"/>
+                        <!-- Lines -->
+                        <rect x="70" y="44" width="40" height="6" rx="3" fill="#D8B4FE"/>
+                        <rect x="70" y="58" width="60" height="5" rx="2.5" fill="#EDE9FE"/>
+                        <rect x="70" y="70" width="55" height="5" rx="2.5" fill="#EDE9FE"/>
+                        <rect x="70" y="82" width="48" height="5" rx="2.5" fill="#EDE9FE"/>
+                        <!-- Mini chart bars -->
+                        <rect x="72" y="104" width="12" height="20" rx="3" fill="#7C3AED" opacity="0.7"/>
+                        <rect x="90" y="112" width="12" height="12" rx="3" fill="#A78BFA"/>
+                        <rect x="108" y="108" width="12" height="16" rx="3" fill="#C4B5FD"/>
+                        <!-- Chart icon overlay -->
+                        <circle cx="138" cy="40" r="20" fill="#7C3AED" opacity="0.12"/>
+                        <path d="M130 46V36l6 4 6-8 6 6" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Sparkle -->
+                        <circle cx="60" cy="22" r="4" fill="#FBBF24"/>
+                        <circle cx="152" cy="80" r="3" fill="#34D399"/>
+                        <circle cx="48" cy="100" r="3" fill="#F472B6"/>
+                    </svg>
+                </div>
+                <h2 class="empty-title">No analysis yet!</h2>
+                <p class="empty-subtitle">Create your first analysis to start unlocking customer insights.</p>
+                <button class="cta-btn" id="createAnalysisBtn">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/></svg>
+                    <span>Create New Analysis</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

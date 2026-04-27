@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+*.err.log
+
+# Model weights (too large for Git — download separately)
+app/model/banglabert_multitask/best_model.pt
+app/model/banglabert_multitask/*.bin
+app/model/banglabert_multitask/*.safetensors
+
+# Node
+node_modules/
+
+# Misc
+*.bak
+*.tmp

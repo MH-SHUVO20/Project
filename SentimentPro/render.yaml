@@ -1,0 +1,30 @@
+databases:
+  - name: sentimentpro-db
+    databaseName: sentimentpro
+    user: sentimentpro_user
+    plan: free
+
+services:
+  - type: web
+    name: banglasentiment-pro
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sentimentpro-db
+          property: connectionString
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: "https://banglasentiment-pro.onrender.com"
+      - key: MODEL_DIR
+        value: "app/model/banglabert_multitask"
+      - key: TOKENIZER_DIR
+        value: "app/model/tokenizer"
+      - key: NORMALIZER_RESOURCE_DIR
+        value: "app/Normalizer/resources"
+    plan: free

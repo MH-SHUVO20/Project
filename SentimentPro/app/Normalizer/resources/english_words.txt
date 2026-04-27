@@ -1,0 +1,17 @@
+good
+bad
+excellent
+average
+quality
+price
+delivery
+service
+product
+packaging
+box
+seller
+rider
+order
+parcel
+review
+daraz

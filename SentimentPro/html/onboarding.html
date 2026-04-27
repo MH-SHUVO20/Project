@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to BanglaSentiment Pro — Get started with advanced Bengali sentiment analysis in just a few simple steps.">
+    <title>BanglaSentiment Pro — Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='7' fill='%237C3AED'/><circle cx='14' cy='14.5' r='2.5' fill='white'/></svg>">
+<link rel="stylesheet" href="../css/onboarding.css">
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <script src="../js/theme.js"></script>
+    <main class="onboarding-wrapper">
+        <div class="onboarding-card" id="onboardingCard">
+
+            <!-- ===== HEADER ===== -->
+            <header class="card-header">
+                <span class="celebration-emoji" aria-hidden="true">OK</span>
+                <h1 class="card-heading">Welcome to BanglaSentiment Pro!</h1>
+                <p class="card-subtitle">Let's get you started in just a few simple steps.</p>
+            </header>
+
+            <!-- ===== BODY: Steps + Illustration ===== -->
+            <div class="card-body">
+
+                <!-- LEFT: Checklist -->
+                <nav class="steps-checklist" aria-label="Onboarding steps">
+                    <ol class="steps-list">
+                        <li class="step active" data-step="1">
+                            <div class="step-badge">1</div>
+                            <div class="step-content">
+                                <span class="step-title">Create Your First Analysis</span>
+                            </div>
+                        </li>
+                        <li class="step" data-step="2">
+                            <div class="step-badge">2</div>
+                            <div class="step-content">
+                                <span class="step-title">Understand Results</span>
+                            </div>
+                        </li>
+                        <li class="step" data-step="3">
+                            <div class="step-badge">3</div>
+                            <div class="step-content">
+                                <span class="step-title">Explore Dashboard</span>
+                            </div>
+                        </li>
+                        <li class="step" data-step="4">
+                            <div class="step-badge">4</div>
+                            <div class="step-content">
+                                <span class="step-title">Export &amp; Share Insights</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+
+                <!-- RIGHT: Illustration -->
+                <div class="illustration-area">
+                    <div class="emoji-faces">
+                        <div class="emoji-face happy">
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="38" fill="#22C55E" opacity="0.15"/>
+                                <circle cx="40" cy="40" r="32" fill="#22C55E"/>
+                                <ellipse cx="29" cy="34" rx="3.5" ry="4" fill="#fff"/>
+                                <ellipse cx="51" cy="34" rx="3.5" ry="4" fill="#fff"/>
+                                <path d="M26 46c3.5 6 10.5 9 14 9s10.5-3 14-9" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="29" cy="34" rx="1.5" ry="2" fill="#166534"/>
+                                <circle cx="51" cy="34" rx="1.5" ry="2" fill="#166534"/>
+                            </svg>
+                            <span class="emoji-label">Happy</span>
+                        </div>
+                        <div class="emoji-face neutral">
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="38" fill="#EAB308" opacity="0.15"/>
+                                <circle cx="40" cy="40" r="32" fill="#EAB308"/>
+                                <ellipse cx="29" cy="34" rx="3.5" ry="4" fill="#fff"/>
+                                <ellipse cx="51" cy="34" rx="3.5" ry="4" fill="#fff"/>
+                                <line x1="28" y1="48" x2="52" y2="48" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="29" cy="34" rx="1.5" ry="2" fill="#854d0e"/>
+                                <circle cx="51" cy="34" rx="1.5" ry="2" fill="#854d0e"/>
+                            </svg>
+                            <span class="emoji-label">Neutral</span>
+                        </div>
+                        <div class="emoji-face sad">
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="38" fill="#EF4444" opacity="0.15"/>
+                                <circle cx="40" cy="40" r="32" fill="#EF4444"/>
+                                <ellipse cx="29" cy="34" rx="3.5" ry="4" fill="#fff"/>
+                                <ellipse cx="51" cy="34" rx="3.5" ry="4" fill="#fff"/>
+                                <path d="M28 52c3.5-6 10.5-9 12-9s8.5 3 12 9" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="29" cy="34" rx="1.5" ry="2" fill="#7f1d1d"/>
+                                <circle cx="51" cy="34" rx="1.5" ry="2" fill="#7f1d1d"/>
+                            </svg>
+                            <span class="emoji-label">Sad</span>
+                        </div>
+                    </div>
+
+                    <!-- Mini bar chart -->
+                    <div class="mini-chart" aria-hidden="true">
+                        <div class="bar bar-happy" style="--h: 78%">
+                            <span class="bar-val">62%</span>
+                        </div>
+                        <div class="bar bar-neutral" style="--h: 45%">
+                            <span class="bar-val">24%</span>
+                        </div>
+                        <div class="bar bar-sad" style="--h: 28%">
+                            <span class="bar-val">14%</span>
+                        </div>
+                    </div>
+
+                    <p class="illustration-caption">Analyze Bengali customer reviews, understand sentiment, and make data-driven decisions.</p>
+
+                    <!-- CTA -->
+                    <button class="cta-btn" id="ctaStart">
+                        <span>Let's Start</span>
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ===== FOOTER: Feature Icons ===== -->
+            <footer class="card-footer">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M3.34 17a10 10 0 0 0 17.32 0"/><line x1="12" y1="22" x2="12" y2="19"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/><path d="M9 2.5c1-0.5 2-0.5 3-0.5s2 0 3 0.5"/></svg>
+                    </div>
+                    <span class="feature-label">Accurate AI-Powered Analysis</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M9 10h6"/><path d="M9 14h4"/></svg>
+                    </div>
+                    <span class="feature-label">Bengali Language Optimized</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+                    </div>
+                    <span class="feature-label">Actionable Business Insights</span>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/onboarding.js"></script>
+</body>
+</html>

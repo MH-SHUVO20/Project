@@ -1,0 +1,39 @@
+/* ============================================================
+   BanglaSentiment Pro — Shared Toast Notifications
+   Single source of truth for toast styles across all pages
+   ============================================================ */
+
+.toast {
+    position: fixed;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-120%);
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    z-index: 9999;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.toast.show    { transform: translateX(-50%) translateY(0); opacity: 1; }
+.toast.success { background: #22c55e; }
+.toast.error,
+.toast.danger  { background: #EF4444; }
+.toast.info    { background: #7C3AED; }
+
+/* Shared shake animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%      { transform: translateX(-6px); }
+    40%      { transform: translateX(6px); }
+    60%      { transform: translateX(-4px); }
+    80%      { transform: translateX(4px); }
+}
+.input.error { border-color: #ef4444 !important; }

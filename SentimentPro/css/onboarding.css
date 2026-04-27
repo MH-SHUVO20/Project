@@ -1,0 +1,473 @@
+/* ============================================================
+   BanglaSentiment Pro — Onboarding / Welcome
+   Primary: #7C3AED  |  Secondary: #6366F1  |  BG: #F5F3FF
+   ============================================================ */
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #1e1b4b;
+    background: #F5F3FF;
+    min-height: 100vh;
+}
+
+/* ---------- Wrapper ---------- */
+.onboarding-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background decoration */
+.onboarding-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+    top: -120px;
+    right: -100px;
+    pointer-events: none;
+}
+.onboarding-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    bottom: -80px;
+    left: -60px;
+    pointer-events: none;
+}
+
+/* ==================== CARD ==================== */
+.onboarding-card {
+    width: 100%;
+    max-width: 920px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow:
+        0 1px 3px rgba(124, 58, 237, 0.06),
+        0 8px 32px rgba(124, 58, 237, 0.08);
+    padding: 44px 48px 40px;
+    position: relative;
+    z-index: 1;
+    animation: cardEntrance 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==================== HEADER ==================== */
+.card-header {
+    text-align: center;
+    margin-bottom: 38px;
+}
+.celebration-emoji {
+    display: inline-block;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    animation: emojiPop 0.6s 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes emojiPop {
+    from {
+        opacity: 0;
+        transform: scale(0.3) rotate(-15deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+.card-heading {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #1e1b4b;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+.card-subtitle {
+    font-size: 0.95rem;
+    color: #71717a;
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* ==================== BODY ==================== */
+.card-body {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+/* ---------- Steps Checklist ---------- */
+.steps-checklist {
+    flex-shrink: 0;
+    width: 240px;
+}
+.steps-list {
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Connecting line */
+.steps-list::before {
+    content: '';
+    position: absolute;
+    left: 17px;
+    top: 40px;
+    bottom: 16px;
+    width: 2px;
+    background: #ede9fe;
+    border-radius: 2px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.step:hover {
+    opacity: 0.85;
+}
+
+/* Badge */
+.step-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Inactive state */
+    background: #f5f3ff;
+    color: #a78bfa;
+    border: 2px solid #ede9fe;
+}
+
+/* Active */
+.step.active .step-badge {
+    background: #7C3AED;
+    color: #ffffff;
+    border-color: #7C3AED;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+}
+
+/* Completed */
+.step.completed .step-badge {
+    background: #7C3AED;
+    color: #ffffff;
+    border-color: #7C3AED;
+}
+.step.completed .step-badge::after {
+    content: '✓';
+    font-size: 0.9rem;
+}
+
+.step-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #a1a1aa;
+    transition: color 0.3s;
+}
+.step.active .step-title {
+    color: #1e1b4b;
+}
+.step.completed .step-title {
+    color: #7C3AED;
+}
+
+/* Pulse animation on active badge */
+.step.active .step-badge {
+    animation: badgePulse 2s ease-in-out infinite;
+}
+@keyframes badgePulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15); }
+    50%      { box-shadow: 0 0 0 8px rgba(124, 58, 237, 0.06); }
+}
+
+/* ---------- Illustration Area ---------- */
+.illustration-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Emoji Faces */
+.emoji-faces {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+.emoji-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.emoji-face svg {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+.emoji-face:hover svg {
+    transform: scale(1.1) translateY(-4px);
+}
+.emoji-face.happy svg  { animation: faceFloat 3s ease-in-out infinite; }
+.emoji-face.neutral svg { animation: faceFloat 3s 0.5s ease-in-out infinite; }
+.emoji-face.sad svg    { animation: faceFloat 3s 1s ease-in-out infinite; }
+
+@keyframes faceFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+}
+
+.emoji-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #a1a1aa;
+}
+
+/* Mini Bar Chart */
+.mini-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    height: 80px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+.bar {
+    width: 36px;
+    border-radius: 6px 6px 3px 3px;
+    position: relative;
+    animation: barGrow 0.8s 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: var(--h);
+}
+@keyframes barGrow {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: var(--h);
+        opacity: 1;
+    }
+}
+.bar-happy  { background: linear-gradient(180deg, #22C55E 0%, #16A34A 100%); }
+.bar-neutral { background: linear-gradient(180deg, #EAB308 0%, #CA8A04 100%); }
+.bar-sad    { background: linear-gradient(180deg, #EF4444 0%, #DC2626 100%); }
+
+.bar-val {
+    position: absolute;
+    top: -22px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #71717a;
+    white-space: nowrap;
+}
+
+/* Caption */
+.illustration-caption {
+    font-size: 0.85rem;
+    color: #71717a;
+    line-height: 1.55;
+    max-width: 380px;
+    margin-bottom: 26px;
+}
+
+/* CTA Button */
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 36px;
+    background: #7C3AED;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.cta-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s;
+}
+.cta-btn:hover {
+    background: #6d28d9;
+    box-shadow: 0 4px 24px rgba(124, 58, 237, 0.35);
+}
+.cta-btn:hover svg {
+    transform: translateX(4px);
+}
+.cta-btn:active {
+    transform: scale(0.97);
+}
+
+/* ==================== FOOTER ==================== */
+.card-footer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid #f1f0f5;
+}
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 160px;
+    text-align: center;
+}
+.feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #f5f3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7C3AED;
+    transition: background 0.2s, transform 0.2s;
+}
+.feature-icon svg {
+    width: 22px;
+    height: 22px;
+}
+.feature-item:hover .feature-icon {
+    background: #ede9fe;
+    transform: translateY(-2px);
+}
+.feature-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #52525b;
+    line-height: 1.4;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+    .onboarding-card {
+        padding: 32px 24px 28px;
+    }
+    .card-body {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .steps-checklist {
+        width: 100%;
+    }
+    .steps-list {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0;
+    }
+    .steps-list::before {
+        /* Horizontal line */
+        top: 17px;
+        left: 40px;
+        right: 40px;
+        bottom: auto;
+        height: 2px;
+        width: auto;
+    }
+    .step {
+        flex-direction: column;
+        padding: 0 10px;
+        gap: 8px;
+        text-align: center;
+    }
+    .card-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .emoji-face svg {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .onboarding-wrapper {
+        padding: 16px 12px;
+    }
+    .onboarding-card {
+        padding: 24px 16px 20px;
+        border-radius: 14px;
+    }
+    .card-heading {
+        font-size: 1.3rem;
+    }
+    .emoji-faces {
+        gap: 16px;
+    }
+    .emoji-face svg {
+        width: 52px;
+        height: 52px;
+    }
+    .steps-list::before {
+        display: none;
+    }
+}

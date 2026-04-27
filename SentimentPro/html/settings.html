@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BanglaSentiment Pro — Manage your profile, preferences, API keys, and account settings.">
+    <title>BanglaSentiment Pro — Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='7' fill='%237C3AED'/><circle cx='14' cy='14.5' r='2.5' fill='white'/></svg>">
+<link rel="stylesheet" href="../css/dashboard.css">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='7' fill='%237C3AED'/><circle cx='14' cy='14.5' r='2.5' fill='white'/></svg>">
+<link rel="stylesheet" href="../css/settings.css">
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <script src="../js/theme.js"></script>
+    <div class="app-layout">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <svg class="sidebar-logo" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="28" height="28" rx="7" fill="#7C3AED"/>
+                    <path d="M8 14.5C8 11 10.5 8 14 8C17.5 8 20 11 20 14.5C20 18 17.5 20.5 14 20.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                    <circle cx="14" cy="14.5" r="2.5" fill="#fff"/>
+                    <path d="M14 20.5V23" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar-brand-name">BanglaSentiment</span>
+            </div>
+            <nav class="sidebar-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="dashboard.html" class="nav-link" id="navDashboard">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                        <span>Dashboard</span>
+                    </a></li>
+                    <li><a href="analysis.html" class="nav-link" id="navNewAnalysis">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                        <span>New Analysis</span>
+                    </a></li>
+                    <li><a href="results.html" class="nav-link" id="navResults">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        <span>Results</span>
+                    </a></li>
+                    <li><a href="history.html" class="nav-link" id="navHistory">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>History</span>
+                    </a></li>
+                    <li><a href="settings.html" class="nav-link active" id="navSettings">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span>Settings</span>
+                    </a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-link" id="navHelp">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span>Help</span>
+                </a>
+                <a href="login.html" class="nav-link" id="navLogout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="settings-header">
+                <div>
+                    <h1 class="page-title">Settings</h1>
+                    <p class="page-subtitle">Manage your account, preferences, and integrations.</p>
+                </div>
+            </header>
+
+            <!-- Settings Tab Nav -->
+            <div class="settings-tabs" id="settingsTabs">
+                <button class="settings-tab active" data-section="profile">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Profile
+                </button>
+                <button class="settings-tab" data-section="account">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    Account
+                </button>
+                <button class="settings-tab" data-section="notifications">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    Notifications
+                </button>
+                <button class="settings-tab" data-section="apikeys">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    API Keys
+                </button>
+                <button class="settings-tab" data-section="appearance">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    Appearance
+                </button>
+            </div>
+
+            <!-- ===== PROFILE SECTION ===== -->
+            <div class="settings-section active" id="sectionProfile" data-section="profile">
+                <!-- Profile Card -->
+                <div class="s-card profile-card">
+                    <div class="profile-top">
+                        <div class="avatar-wrap">
+                            <div class="avatar" id="avatar">A</div>
+                            <button class="avatar-edit" id="avatarEditBtn" title="Change photo">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="12" height="12"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            </button>
+                        </div>
+                        <div class="profile-info">
+                            <h2 class="profile-name" id="profileName">Loading account</h2>
+                            <p class="profile-email" id="profileEmail">Loading account...</p>
+                            <span class="profile-role">Authenticated account</span>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="p-stat">
+                            <span class="p-stat-num">0</span>
+                            <span class="p-stat-label">Analyses</span>
+                        </div>
+                        <div class="p-stat">
+                            <span class="p-stat-num">0</span>
+                            <span class="p-stat-label">Reviews</span>
+                        </div>
+                        <div class="p-stat">
+                            <span class="p-stat-num">Loading</span>
+                            <span class="p-stat-label">Member Since</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Profile Form -->
+                <div class="s-card">
+                    <h3 class="s-card-title">Personal Information</h3>
+                    <p class="s-card-desc">Update your personal details here.</p>
+                    <form id="profileForm" autocomplete="on">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">First Name</label>
+                            <input type="text" class="form-input" id="firstName" value="" placeholder="Enter first name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">Last Name</label>
+                            <input type="text" class="form-input" id="lastName" value="" placeholder="Enter last name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="emailField">Email Address</label>
+                            <input type="email" class="form-input" id="emailField" value="" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="company">Company</label>
+                            <input type="text" class="form-input" id="company" value="" placeholder="Enter company name">
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label" for="bio">Bio</label>
+                            <textarea class="form-input form-textarea" id="bio" rows="3" placeholder="Tell us about yourself..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancelProfileBtn">Cancel</button>
+                        <button type="button" class="btn-primary" id="saveProfileBtn">Save Changes</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ===== ACCOUNT SECTION ===== -->
+            <div class="settings-section" id="sectionAccount" data-section="account">
+                <div class="s-card">
+                    <h3 class="s-card-title">Change Password</h3>
+                    <p class="s-card-desc">Ensure your account stays secure.</p>
+                    <form id="passwordForm" autocomplete="off">
+                    <div class="form-stack">
+                        <div class="form-group">
+                            <label class="form-label" for="currentPass">Current Password</label>
+                            <input type="password" class="form-input" id="currentPass" placeholder="••••••••" autocomplete="current-password">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newPass">New Password</label>
+                            <input type="password" class="form-input" id="newPass" placeholder="••••••••" autocomplete="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="confirmPass">Confirm New Password</label>
+                            <input type="password" class="form-input" id="confirmPass" placeholder="••••••••" autocomplete="new-password">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-primary" id="updatePassBtn">Update Password</button>
+                    </div>
+                    </form>
+                </div>
+
+                <div class="s-card">
+                    <h3 class="s-card-title">Two-Factor Authentication</h3>
+                    <p class="s-card-desc">Add an extra layer of security to your account.</p>
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <strong>Enable 2FA</strong>
+                            <span>Use authenticator app for login verification</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="toggle2fa">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Danger Zone -->
+                <div class="s-card danger-card">
+                    <h3 class="s-card-title danger-title">Danger Zone</h3>
+                    <p class="s-card-desc">Irreversible actions. Proceed with caution.</p>
+                    <div class="danger-actions">
+                        <div class="danger-row">
+                            <div>
+                                <strong>Export All Data</strong>
+                                <span>Download all your analysis data as JSON</span>
+                            </div>
+                            <button type="button" class="btn-outline-danger" id="exportDataBtn">Export Data</button>
+                        </div>
+                        <div class="danger-row">
+                            <div>
+                                <strong>Delete Account</strong>
+                                <span>Permanently delete your account and all data</span>
+                            </div>
+                            <button type="button" class="btn-danger" id="deleteAccountBtn">Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== NOTIFICATIONS SECTION ===== -->
+            <div class="settings-section" id="sectionNotifications" data-section="notifications">
+                <div class="s-card">
+                    <h3 class="s-card-title">Email Notifications</h3>
+                    <p class="s-card-desc">Choose what emails you want to receive.</p>
+                    <div class="toggle-list">
+                        <div class="toggle-row">
+                            <div class="toggle-info">
+                                <strong>Analysis Complete</strong>
+                                <span>Get notified when your analysis finishes</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="notifyAnalysisComplete" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-row">
+                            <div class="toggle-info">
+                                <strong>Weekly Summary</strong>
+                                <span>Receive weekly digest of your analyses</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="notifyWeeklySummary" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-row">
+                            <div class="toggle-info">
+                                <strong>Product Updates</strong>
+                                <span>New features and improvements</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="notifyProductUpdates">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-row">
+                            <div class="toggle-info">
+                                <strong>Marketing Emails</strong>
+                                <span>Tips, resources, and promotional offers</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="notifyMarketingEmails">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-primary" id="saveNotifBtn">Save Preferences</button>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- ===== API KEYS SECTION ===== -->
+            <div class="settings-section" id="sectionApikeys" data-section="apikeys">
+                <div class="s-card">
+                    <h3 class="s-card-title">API Keys</h3>
+                    <p class="s-card-desc">Generate API keys for programmatic access to the prediction endpoints. Keys are hashed &mdash; the full key is shown only once at creation.</p>
+
+                    <div id="newKeyAlert" style="display:none" class="new-key-alert">
+                        <div class="new-key-header">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" width="18" height="18"><path d="M20 6 9 17l-5-5"/></svg>
+                            <strong>New API Key Created</strong>
+                        </div>
+                        <p style="margin:8px 0 4px;font-size:0.82rem;color:#a1a1aa">Copy this key now. It will not be shown again.</p>
+                        <div class="new-key-row">
+                            <code id="newKeyValue" class="api-key-value api-key-full"></code>
+                            <button class="btn-sm" id="copyNewKeyBtn">Copy</button>
+                        </div>
+                    </div>
+
+                    <div id="apiKeyList" class="api-key-list">
+                        <p style="color:#a1a1aa;font-size:0.85rem">Loading keys...</p>
+                    </div>
+
+                    <div class="generate-key-row">
+                        <input type="text" class="form-input" id="apiKeyLabel" placeholder="Key label, e.g. production or test" maxlength="60" style="max-width:260px">
+                        <button class="btn-outline-purple" id="generateKeyBtn">
+                            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/></svg>
+                            Generate New Key
+                        </button>
+                    </div>
+                </div>
+
+                <div class="s-card">
+                    <h3 class="s-card-title">Usage Example</h3>
+                    <p class="s-card-desc">Use your API key with curl or any HTTP client.</p>
+                    <div class="code-block">
+                        <pre><code id="apiUsageCode">curl -X POST http://localhost:8000/predict \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: bsp_YOUR_KEY_HERE" \
+  -d '{"text": "product ta onek valo"}'</code></pre>
+                        <button class="btn-sm" id="copyUsageBtn">Copy</button>
+                    </div>
+                </div>
+
+                <div class="s-card">
+                    <h3 class="s-card-title">Usage &amp; Limits</h3>
+                    <p class="s-card-desc">Your current API key status.</p>
+                    <div class="usage-bars">
+                        <div class="usage-item">
+                            <div class="usage-head">
+                                <span>Total Analyses</span>
+                                <span class="usage-count" id="usageApiCalls">Loading...</span>
+                            </div>
+                            <div class="usage-track">
+                                <div class="usage-fill" id="usageApiFill" style="width:0%"></div>
+                            </div>
+                        </div>
+                        <div class="usage-item">
+                            <div class="usage-head">
+                                <span>Active Keys</span>
+                                <span class="usage-count" id="usageActiveKeys">Loading...</span>
+                            </div>
+                            <div class="usage-track">
+                                <div class="usage-fill" id="usageKeysFill" style="width:0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== APPEARANCE SECTION ===== -->
+            <div class="settings-section" id="sectionAppearance" data-section="appearance">
+                <div class="s-card">
+                    <h3 class="s-card-title">Appearance</h3>
+                    <p class="s-card-desc">Customize how BanglaSentiment Pro looks for you.</p>
+
+                    <div class="appearance-group">
+                        <label class="form-label">Theme</label>
+                        <div class="theme-options">
+                            <button class="theme-btn active" data-theme="light" id="themeLight">
+                                <div class="theme-preview theme-preview-light"></div>
+                                <span>Light</span>
+                            </button>
+                            <button class="theme-btn" data-theme="dark" id="themeDark">
+                                <div class="theme-preview theme-preview-dark"></div>
+                                <span>Dark</span>
+                            </button>
+                            <button class="theme-btn" data-theme="system" id="themeSystem">
+                                <div class="theme-preview theme-preview-system"></div>
+                                <span>System</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="appearance-group">
+                        <label class="form-label">Language</label>
+                        <select class="form-input form-select" id="langSelect">
+                            <option value="en" selected>English</option>
+                            <option value="bn">বাংলা (Bengali)</option>
+                        </select>
+                    </div>
+
+                    <div class="toggle-row" style="margin-top:16px">
+                        <div class="toggle-info">
+                            <strong>Compact Mode</strong>
+                            <span>Reduce spacing for more content on screen</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="compactToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/settings.js"></script>
+</body>
+</html>

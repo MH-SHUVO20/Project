@@ -1,0 +1,345 @@
+/* ============================================================
+   BanglaSentiment Pro — Theme System
+   Dark mode, compact mode via CSS custom properties.
+   Applied by theme.js on every page.
+   ============================================================ */
+
+:root {
+    /* Light theme (default) */
+    --bg-body: #f8f7fc;
+    --bg-sidebar: #fff;
+    --bg-card: #fff;
+    --bg-card-hover: #faf9ff;
+    --bg-input: #fff;
+    --bg-code: #1e1b4b;
+    --border-color: #f1f0f5;
+    --border-input: #e4e4e7;
+    --text-primary: #1e1b4b;
+    --text-secondary: #52525b;
+    --text-muted: #71717a;
+    --text-hint: #a1a1aa;
+    --accent: #7C3AED;
+    --accent-hover: #6D28D9;
+    --accent-light: #f5f3ff;
+    --accent-lighter: #faf5ff;
+    --accent-border: #D8B4FE;
+    --danger: #DC2626;
+    --danger-light: #FEF2F2;
+    --danger-border: #FECACA;
+    --success: #22C55E;
+    --success-light: #F0FDF4;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 14px rgba(0,0,0,0.06);
+    --shadow-accent: 0 2px 8px rgba(124, 58, 237, 0.25);
+}
+
+/* ===== DARK THEME ===== */
+[data-theme="dark"] {
+    --bg-body: #0f0d1a;
+    --bg-sidebar: #1a1726;
+    --bg-card: #1e1b2e;
+    --bg-card-hover: #252238;
+    --bg-input: #252238;
+    --bg-code: #0d0b14;
+    --border-color: #2d2a3e;
+    --border-input: #3d3a52;
+    --text-primary: #e8e6f0;
+    --text-secondary: #b0adc0;
+    --text-muted: #8886a0;
+    --text-hint: #6b698a;
+    --accent: #A78BFA;
+    --accent-hover: #8B5CF6;
+    --accent-light: #1e1738;
+    --accent-lighter: #171028;
+    --accent-border: #6D28D9;
+    --danger: #EF4444;
+    --danger-light: #1f1214;
+    --danger-border: #7F1D1D;
+    --success: #34D399;
+    --success-light: #0d2118;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 14px rgba(0,0,0,0.3);
+    --shadow-accent: 0 2px 8px rgba(167, 139, 250, 0.25);
+}
+
+/* ===== Apply variables to base elements ===== */
+body {
+    background: var(--bg-body) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Sidebar */
+[data-theme="dark"] .sidebar {
+    background: var(--bg-sidebar);
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .sidebar-brand-name {
+    color: var(--text-primary);
+}
+[data-theme="dark"] .nav-link {
+    color: var(--text-muted);
+}
+[data-theme="dark"] .nav-link:hover {
+    color: var(--accent);
+    background: var(--accent-light);
+}
+[data-theme="dark"] .nav-link.active {
+    color: #fff;
+    background: var(--accent);
+}
+
+/* Cards */
+[data-theme="dark"] .s-card,
+[data-theme="dark"] .metric-card,
+[data-theme="dark"] .analysis-card,
+[data-theme="dark"] .result-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .s-card-title,
+[data-theme="dark"] .metric-label,
+[data-theme="dark"] .page-title {
+    color: var(--text-primary);
+}
+[data-theme="dark"] .s-card-desc,
+[data-theme="dark"] .page-subtitle {
+    color: var(--text-muted);
+}
+
+/* Topbar */
+[data-theme="dark"] .top-bar {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .greeting-text {
+    color: var(--text-primary);
+}
+[data-theme="dark"] .greeting-sub {
+    color: var(--text-muted);
+}
+
+/* Forms */
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+    background: var(--bg-input);
+    border-color: var(--border-input);
+    color: var(--text-primary);
+}
+[data-theme="dark"] .form-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.15);
+}
+[data-theme="dark"] .form-label {
+    color: var(--text-secondary);
+}
+
+/* Buttons */
+[data-theme="dark"] .btn-primary {
+    background: var(--accent);
+}
+[data-theme="dark"] .btn-primary:hover {
+    background: var(--accent-hover);
+    box-shadow: var(--shadow-accent);
+}
+[data-theme="dark"] .btn-secondary {
+    background: var(--bg-input);
+    border-color: var(--border-input);
+    color: var(--text-secondary);
+}
+[data-theme="dark"] .btn-secondary:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .btn-sm {
+    background: var(--bg-input);
+    border-color: var(--border-input);
+    color: var(--text-secondary);
+}
+[data-theme="dark"] .btn-sm:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+[data-theme="dark"] .btn-outline-purple {
+    background: var(--accent-light);
+    border-color: var(--accent-border);
+    color: var(--accent);
+}
+
+/* Tabs */
+[data-theme="dark"] .settings-tabs {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .settings-tab {
+    color: var(--text-muted);
+}
+[data-theme="dark"] .settings-tab:hover {
+    color: var(--accent);
+    background: var(--accent-light);
+}
+[data-theme="dark"] .settings-tab.active {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Toggle */
+[data-theme="dark"] .toggle-row {
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .toggle-info strong {
+    color: var(--text-primary);
+}
+[data-theme="dark"] .toggle-info span {
+    color: var(--text-muted);
+}
+[data-theme="dark"] .toggle-slider {
+    background: var(--border-input);
+}
+
+/* API Keys */
+[data-theme="dark"] .api-key-item {
+    background: var(--bg-card-hover);
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .api-key-value {
+    background: var(--bg-input);
+    color: var(--text-muted);
+}
+[data-theme="dark"] .new-key-alert {
+    background: var(--success-light);
+    border-color: #166534;
+}
+
+/* Danger zone */
+[data-theme="dark"] .danger-card {
+    background: var(--danger-light);
+    border-color: var(--danger-border);
+}
+[data-theme="dark"] .danger-row {
+    border-color: var(--danger-border);
+}
+
+/* Usage bars */
+[data-theme="dark"] .usage-track {
+    background: var(--border-color);
+}
+[data-theme="dark"] .usage-head {
+    color: var(--text-secondary);
+}
+
+/* Profile card stays gradient */
+[data-theme="dark"] .profile-card {
+    background: linear-gradient(135deg, #6D28D9 0%, #4F46E5 100%);
+}
+
+/* Metric cards */
+[data-theme="dark"] .metric-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .metric-value {
+    color: var(--text-primary);
+}
+
+/* Empty state */
+[data-theme="dark"] .empty-title {
+    color: var(--text-primary);
+}
+[data-theme="dark"] .empty-subtitle {
+    color: var(--text-muted);
+}
+
+/* Theme picker in dark mode */
+[data-theme="dark"] .theme-btn {
+    background: var(--bg-input);
+    border-color: var(--border-input);
+    color: var(--text-secondary);
+}
+[data-theme="dark"] .theme-btn:hover {
+    border-color: var(--accent-border);
+}
+[data-theme="dark"] .theme-btn.active {
+    border-color: var(--accent);
+    background: var(--accent-light);
+    color: var(--accent);
+}
+
+/* History page */
+[data-theme="dark"] .history-table th {
+    background: var(--bg-card-hover);
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .history-table td {
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+[data-theme="dark"] .history-table tr:hover td {
+    background: var(--bg-card-hover);
+}
+
+/* Analysis page */
+[data-theme="dark"] .analysis-input,
+[data-theme="dark"] textarea {
+    background: var(--bg-input);
+    border-color: var(--border-input);
+    color: var(--text-primary);
+}
+
+/* Scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--border-input);
+    border-radius: 4px;
+}
+
+/* ===== COMPACT MODE ===== */
+[data-compact="true"] .main-content {
+    padding: 16px 20px;
+}
+[data-compact="true"] .s-card {
+    padding: 18px 20px;
+    margin-bottom: 12px;
+}
+[data-compact="true"] .metrics-grid {
+    gap: 12px;
+}
+[data-compact="true"] .metric-card {
+    padding: 14px 16px;
+}
+[data-compact="true"] .settings-section {
+    gap: 12px;
+}
+[data-compact="true"] .form-grid {
+    gap: 10px;
+    margin-bottom: 16px;
+}
+[data-compact="true"] .toggle-row {
+    padding: 10px 0;
+}
+[data-compact="true"] .sidebar-nav .nav-link {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+}
+
+/* ===== SMOOTH TRANSITION ===== */
+body,
+.sidebar,
+.main-content,
+.s-card,
+.metric-card,
+.top-bar,
+.form-input,
+.btn-primary,
+.btn-secondary,
+.btn-sm,
+.settings-tabs,
+.settings-tab,
+.toggle-row,
+.api-key-item,
+.theme-btn {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}

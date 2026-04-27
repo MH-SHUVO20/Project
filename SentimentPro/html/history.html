@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BanglaSentiment Pro — View your complete analysis history and track all past sentiment analyses.">
+    <title>BanglaSentiment Pro — History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='7' fill='%237C3AED'/><circle cx='14' cy='14.5' r='2.5' fill='white'/></svg>">
+<link rel="stylesheet" href="../css/dashboard.css">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='7' fill='%237C3AED'/><circle cx='14' cy='14.5' r='2.5' fill='white'/></svg>">
+<link rel="stylesheet" href="../css/history.css">
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <script src="../js/theme.js"></script>
+    <div class="app-layout">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <svg class="sidebar-logo" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="28" height="28" rx="7" fill="#7C3AED"/>
+                    <path d="M8 14.5C8 11 10.5 8 14 8C17.5 8 20 11 20 14.5C20 18 17.5 20.5 14 20.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                    <circle cx="14" cy="14.5" r="2.5" fill="#fff"/>
+                    <path d="M14 20.5V23" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar-brand-name">BanglaSentiment</span>
+            </div>
+            <nav class="sidebar-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="dashboard.html" class="nav-link" id="navDashboard">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                        <span>Dashboard</span>
+                    </a></li>
+                    <li><a href="analysis.html" class="nav-link" id="navNewAnalysis">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                        <span>New Analysis</span>
+                    </a></li>
+                    <li><a href="results.html" class="nav-link" id="navResults">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        <span>Results</span>
+                    </a></li>
+                    <li><a href="history.html" class="nav-link active" id="navHistory">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>History</span>
+                    </a></li>
+                    <li><a href="settings.html" class="nav-link" id="navSettings">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span>Settings</span>
+                    </a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-link" id="navHelp">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span>Help</span>
+                </a>
+                <a href="login.html" class="nav-link" id="navLogout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="history-header">
+                <div>
+                    <h1 class="page-title">Analysis History</h1>
+                    <p class="page-subtitle">Track all your past sentiment analyses.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="outline-btn" id="clearHistoryBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        <span>Clear All</span>
+                    </button>
+                    <a href="analysis.html" class="new-analysis-btn">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/></svg>
+                        <span>New Analysis</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar" id="statsBar">
+                <div class="stat-item">
+                    <span class="stat-num" id="statTotal">0</span>
+                    <span class="stat-label">Total Analyses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num positive" id="statPositive">0</span>
+                    <span class="stat-label">Positive</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num neutral" id="statNeutral">0</span>
+                    <span class="stat-label">Neutral</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num negative" id="statNegative">0</span>
+                    <span class="stat-label">Negative</span>
+                </div>
+            </div>
+
+            <!-- History Table -->
+            <div class="history-card" id="historyCard">
+                <div class="table-wrap">
+                    <table class="history-table" id="historyTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Input Text</th>
+                                <th>Method</th>
+                                <th>Sentiment</th>
+                                <th>Emotion</th>
+                                <th>Confidence</th>
+                                <th>Date & Time</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyBody">
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="history-empty" id="historyEmpty" style="display:none">
+                <div class="empty-icon">
+                    <svg viewBox="0 0 80 80" fill="none" width="80" height="80">
+                        <circle cx="40" cy="40" r="36" fill="#F5F3FF" stroke="#EDE9FE" stroke-width="2"/>
+                        <circle cx="40" cy="40" r="20" fill="#EDE9FE"/>
+                        <polyline points="40 28 40 40 48 44" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2 class="empty-title">No analysis history yet</h2>
+                <p class="empty-subtitle">Run your first analysis to start tracking results here.</p>
+                <a href="analysis.html" class="cta-btn">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/></svg>
+                    <span>Create New Analysis</span>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/history.js"></script>
+</body>
+</html>

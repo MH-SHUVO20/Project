@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BanglaSentiment Pro — Advanced Bengali language sentiment analysis powered by deep learning. Sign in or register to access your dashboard.">
+    <title>BanglaSentiment Pro — Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='7' fill='%237C3AED'/><circle cx='14' cy='14.5' r='2.5' fill='white'/></svg>">
+<link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <script src="../js/theme.js"></script>
+    <main class="split-layout">
+        <!-- ===== LEFT PANEL ===== -->
+        <aside class="left-panel" aria-label="Brand information">
+            <!-- Brand -->
+            <div class="brand">
+                <svg class="brand-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="28" height="28" rx="7" fill="rgba(255,255,255,0.18)"/>
+                    <path d="M8 14.5C8 11 10.5 8 14 8C17.5 8 20 11 20 14.5C20 18 17.5 20.5 14 20.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                    <circle cx="14" cy="14.5" r="2.5" fill="#fff"/>
+                    <path d="M14 20.5V23" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+                <span class="brand-name">BanglaSentiment Pro</span>
+            </div>
+
+            <!-- Hero copy -->
+            <div class="hero-copy">
+                <h1 class="hero-heading">Understand what your customers truly feel.</h1>
+                <p class="hero-subtitle">Advanced Bengali language sentiment analysis powered by deep learning.</p>
+            </div>
+
+            <!-- Feature highlights -->
+            <ul class="features">
+                <li class="feature-row">
+                    <div class="feature-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
+                    <div>
+                        <strong class="feature-title">6 Emotion Classes</strong>
+                        <span class="feature-desc">Fine-grained sentiment analysis</span>
+                    </div>
+                </li>
+                <li class="feature-row">
+                    <div class="feature-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <div>
+                        <strong class="feature-title">50K+ Training Reviews</strong>
+                        <span class="feature-desc">Trained on diverse datasets</span>
+                    </div>
+                </li>
+                <li class="feature-row">
+                    <div class="feature-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <strong class="feature-title">~1s per Analysis</strong>
+                        <span class="feature-desc">Real-time processing</span>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Copyright -->
+            <p class="copyright">&copy; 2026 BanglaSentiment Pro. All rights reserved.</p>
+        </aside>
+
+        <!-- ===== RIGHT PANEL ===== -->
+        <section class="right-panel" aria-label="Authentication">
+            <div class="form-card" id="formCard">
+                <!-- Tabs -->
+                <div class="tabs" role="tablist">
+                    <button class="tab active" id="tabSignIn" role="tab" aria-selected="true" data-tab="signin">Sign In</button>
+                    <button class="tab" id="tabRegister" role="tab" aria-selected="false" data-tab="register">Register</button>
+                    <div class="tab-indicator" id="tabIndicator"></div>
+                </div>
+
+                <!-- ===== SIGN IN FORM ===== -->
+                <form class="auth-form" id="signinForm" autocomplete="off" novalidate>
+                    <h2 class="form-heading">Welcome back</h2>
+                    <p class="form-subtitle">Please sign in to access your dashboard.</p>
+
+                    <div class="field-group">
+                        <label for="signinEmail" class="field-label">Company Email</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <input type="email" id="signinEmail" class="input" placeholder="you@company.com" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="label-row">
+                            <label for="signinPassword" class="field-label">Password</label>
+                            <a href="#" class="forgot-link" id="forgotLink">Forgot password?</a>
+                        </div>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            <input type="password" id="signinPassword" class="input" placeholder="Enter your password" autocomplete="current-password" required>
+                            <button type="button" class="eye-toggle" id="eyeToggle" aria-label="Toggle password visibility">
+                                <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <svg class="eye-closed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <label class="remember-row" for="rememberMe">
+                        <input type="checkbox" id="rememberMe" class="checkbox">
+                        <span class="checkmark"></span>
+                        <span class="remember-label">Remember me for 30 days</span>
+                    </label>
+
+                    <button type="submit" class="cta-btn" id="signinBtn">
+                        <span>Sign In</span>
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+                    </button>
+
+                    <div class="divider">
+                        <span>Or continue with</span>
+                    </div>
+
+                    <div class="alt-buttons">
+                        <button type="button" class="alt-btn" id="ssoBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+                            <span>SSO</span>
+                        </button>
+                        <button type="button" class="alt-btn" id="apiKeyBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                            <span>API Key</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- ===== REGISTER FORM ===== -->
+                <form class="auth-form hidden" id="registerForm" autocomplete="off" novalidate>
+                    <h2 class="form-heading">Create an account</h2>
+                    <p class="form-subtitle">Get started with BanglaSentiment Pro today.</p>
+
+                    <div class="field-group">
+                        <label for="regName" class="field-label">Full Name</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <input type="text" id="regName" class="input" placeholder="John Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="regEmail" class="field-label">Company Email</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <input type="email" id="regEmail" class="input" placeholder="you@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="regPassword" class="field-label">Password</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            <input type="password" id="regPassword" class="input" placeholder="Min 8 characters" autocomplete="new-password" required>
+                            <button type="button" class="eye-toggle" aria-label="Toggle password visibility" data-target="regPassword">
+                                <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <svg class="eye-closed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="regConfirm" class="field-label">Confirm Password</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            <input type="password" id="regConfirm" class="input" placeholder="Repeat your password" autocomplete="new-password" required>
+                        </div>
+                    </div>
+
+                    <label class="remember-row" for="agreeTerms">
+                        <input type="checkbox" id="agreeTerms" class="checkbox" required>
+                        <span class="checkmark"></span>
+                        <span class="remember-label">I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a></span>
+                    </label>
+
+                    <button type="submit" class="cta-btn" id="registerBtn">
+                        <span>Create Account</span>
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+                    </button>
+
+                    <div class="divider">
+                        <span>Or continue with</span>
+                    </div>
+
+                    <div class="alt-buttons">
+                        <button type="button" class="alt-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+                            <span>SSO</span>
+                        </button>
+                        <button type="button" class="alt-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                            <span>API Key</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>
