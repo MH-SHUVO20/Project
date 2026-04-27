@@ -271,10 +271,14 @@ def _heuristic_sentiment(text: str) -> str:
     padded_text = f" {clean_text} "
     has_negation = bool(_NEGATION_RE.search(text_l)) or any(f" {token} " in padded_text for token in _BN_NEGATION)
 
-    # Negation flips positive → negative ONLY if there's no contrast that reverses it
-    if has_negation and pos_hits > 0 and neg_hits == 0 and not contrast_match:
-        neg_hits += pos_hits
-        pos_hits = 0
+    # Negation flips dominant sentiment ONLY if there's no contrast that reverses it
+    if has_negation and not contrast_match:
+        if pos_hits >= neg_hits and pos_hits > 0:
+            neg_hits += pos_hits
+            pos_hits = 0
+        elif neg_hits > pos_hits:
+            pos_hits += neg_hits
+            neg_hits = 0
 
     # --- If neutral hedges + conditional forms dominate, return neutral ---
     if has_neutral or has_conditional:

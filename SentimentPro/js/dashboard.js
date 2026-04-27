@@ -76,6 +76,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.textContent = '0' + item.suffix;
                 counterObserver.observe(el);
             });
+
+            // Fetch and render recent analyses
+            if (totalAnalyses > 0 && window.apiClient.getHistory) {
+                const history = await window.apiClient.getHistory({ limit: 5 });
+                const recentList = history.predictions || [];
+                
+                const emptyState = document.getElementById('emptyState');
+                const recentAnalyses = document.getElementById('recentAnalyses');
+                const tbody = document.getElementById('recentAnalysesBody');
+                
+                if (recentList.length > 0) {
+                    if (emptyState) emptyState.style.display = 'none';
+                    if (recentAnalyses) recentAnalyses.style.display = 'block';
+                    
+                    if (tbody) {
+                        tbody.innerHTML = '';
+                        recentList.forEach(item => {
+                            const tr = document.createElement('tr');
+                            tr.style.borderBottom = '1px solid var(--border-color)';
+                            
+                            // Sentiment styling
+                            let badgeClass = 'badge-neutral';
+                            if (item.sentiment === 'positive') badgeClass = 'badge-positive';
+                            if (item.sentiment === 'negative') badgeClass = 'badge-negative';
+                            
+                            const dateStr = new Date(item.created_at).toLocaleDateString('en-US', {
+                                month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                            });
+                            
+                            const textSnippet = item.input_text.length > 50 
+                                ? item.input_text.substring(0, 50) + '...' 
+                                : item.input_text;
+                            
+                            tr.innerHTML = `
+                                <td style="padding: 12px 16px; color: var(--text-primary); max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${textSnippet}</td>
+                                <td style="padding: 12px 16px;"><span class="${badgeClass}">${item.sentiment}</span></td>
+                                <td style="padding: 12px 16px; color: var(--text-secondary);">${Math.round(item.confidence * 100)}%</td>
+                                <td style="padding: 12px 16px; color: var(--text-secondary); font-size: 0.85rem;">${dateStr}</td>
+                            `;
+                            tbody.appendChild(tr);
+                        });
+                    }
+                }
+            }
         } catch (err) {
             console.error(err);
         }
