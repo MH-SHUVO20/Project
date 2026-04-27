@@ -1,0 +1,13 @@
+[build]
+builder = "nixpacks"
+watch = ["app/**", "html/**", "css/**", "js/**"]
+
+[deploy]
+startCommand = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+restartPolicyType = "on-failure"
+
+[env]
+# Railway automatically provides DATABASE_URL, PORT, etc.
+# But you should set these in your Railway Dashboard Variables:
+# JWT_SECRET_KEY=your_secure_secret_here
+# JWT_ALGORITHM=HS256
