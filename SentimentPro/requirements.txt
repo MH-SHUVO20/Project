@@ -8,9 +8,3 @@ python-jose[cryptography]>=3.3.0
 python-multipart>=0.0.6
 psycopg2-binary>=2.9.6
 httpx>=0.24.1
-
-# Machine Learning (Only needed if you plan to use the deep learning model)
-# On Railway free tier, these might exceed memory limits, so they are optional.
-# Remove comments to enable them.
-torch>=2.0.0 --index-url https://download.pytorch.org/whl/cpu
-transformers>=4.30.0
